@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.5/web3.min.js" integrity="sha512-S/O+gH5szs/+/dUylm15Jp/JZJsIoWlpSVMwT6yAS4Rh7kazaRUxSzFBwnqE2/jBphcr7xovTQJaopiEZAzi+A==" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<h2 id="add"></h2>
+
+<table class="transc">
+  <tr>
+    <th>TRANSACTION ADDRESS</th>
+    <th>TYPE OF TRANSACTIONS</th>
+    <th>AMOUNT</th>
+  </tr>
+ 
+</table>
+
+<script>
+    let name1= localStorage.getItem("name1")
+    let currentAccount =localStorage.getItem("currentAccount")
+    $("#add").html(`Transaction details of : ${name1}`)
+    $(document).ready(()=>{
+        accountLoad()
+    })
+    const accountLoad = ()=>{
+        const tab=document.querySelector('.transc')
+        contr.methods.table(currentAccount).call(sender).then(e=>{
+            e.forEach(res=>{
+                tab.innerHTML += "<tr><td>"+res.id+"</td><td>"+res.mode+"</td><td>"+res.amount+"</td></tr>"
+            })
+           
+        }).catch(e=>{
+            console.log(e)
+
+        })
+    }
+
+</script>
+
+<script src="js/web3.js"></script>
+
+</body>
+</html>
