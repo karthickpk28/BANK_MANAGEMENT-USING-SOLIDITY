@@ -15,7 +15,8 @@ login page
 
 
 add account
-![image](https://user-images.githubusercontent.com/71652056/121127939-2f32f000-c848-11eb-9474-6cf4d74bc46d.png)
+![image](https://user-images.githubusercontent.com/71652056/121128868-b5036b00-c849-11eb-8b28-6428fb0ce24c.png)
+
 
 
 search for account
